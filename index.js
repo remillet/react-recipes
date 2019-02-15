@@ -1,5 +1,3 @@
-import path from 'path';
+import log from './log';
 
-const log = msg => console.log(msg);
-
-log('Hello, React!')
+log('Hello there babel, modules from React!')
