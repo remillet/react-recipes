@@ -2,7 +2,6 @@ import React from 'react';
 import TUNA_IMAGE from '../static/images/tuna.jpg';
 
 const RecipeDetail = (props) => {
-    console.log("The Recipe details style is: ", props.style)
 
     return(
        <div style={props.style}>

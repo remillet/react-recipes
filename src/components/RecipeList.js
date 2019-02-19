@@ -1,7 +1,6 @@
 import React from 'react';
 
 const RecipeList = (props) => {
-    console.log("The Recipe lists style is: ", props.style)
 
     return(
         <div style={props.style}>
