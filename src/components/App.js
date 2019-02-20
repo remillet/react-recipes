@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import RecipeList from './RecipeList';
 import RecipeDetail from './RecipeDetail';
+import Button from './Button';
 
 console.log("The process.env.API_URL is: ", API_URL)
 
@@ -45,6 +46,7 @@ class App extends React.Component {
         return (
             <div>
                 <Header />
+                <Button />
                 <main style={{ display: 'flex' }}>
                     <RecipeList 
                         recipes={recipes} 
