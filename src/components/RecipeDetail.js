@@ -3,25 +3,39 @@ import TUNA_IMAGE from '../static/images/tuna.jpg';
 
 const RecipeDetail = (props) => {
 
+    const { details } = props
+
+    if (details == null) {
+        console.log('No recipe seleted.')
+        return (
+            <h3 style={props.style}>Select a recipe on the left to see the details.</h3>
+        )
+    }
+
     return(
        <div style={props.style}>
-           <h2>Tuna Caserole</h2>
-           <img src={TUNA_IMAGE} />
+           <h2>{details.name}</h2>
+           <img src={details.image} height="500" width="500" />
            <div>
-               <span>Main Course</span>
-               <span>1200 calories</span>
+               <span>Category: {details.category}</span>
+               <br />
+               <span>Calories: {details.calories}</span>
            </div>
            <h3>Ingredients</h3>
            <ul>
-               <li>1 can of tuna</li>
-               <li>1/4 cup of mayo</li>
-               <li>1/4 cup of chopped celery</li>
+               {
+                   details.ingredients.map((ingredient, index) => (                      
+                       <li key={index}>{ingredient}</li>
+                   ))                  
+               }
            </ul>
            <h3>Cooking Instructions</h3>
            <ol>
-               <li>Open can of tuna and place in large bowl.</li>
-               <li>Mix may into bowl.</li>
-               <li>Mix celery into bowl.</li>
+           {
+                   details.steps.map((step, index) => (                      
+                       <li key={index}>{step}</li>
+                   ))                  
+               }
            </ol>
        </div>
     );

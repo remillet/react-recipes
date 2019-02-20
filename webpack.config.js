@@ -10,7 +10,7 @@ module.exports = {
 	},
 	context: path.join(__dirname, 'src'),
     mode: 'development',
-    entry: './index.js',
+    entry: ['whatwg-fetch', './index.js'],
     output: {
         path: path.join(__dirname, 'dist'),
         filename: './bundle.js'

@@ -2,22 +2,22 @@ import React from 'react';
 
 const RecipeList = (props) => {
 
-    return(
+    const { recipes, onClick } = props;
+
+
+    return (
         <div style={props.style}>
             <h2>Recipes</h2>
-            <ul>
-                <li key='1'>
-                    <span>Tuna Caserole</span>
-                    <span>Main Course</span>
-                </li>
-                <li>
-                    <span>Grilled Salmon</span>
-                    <span>Main Course</span>
-                </li>
-                <li>
-                    <span>Cheesecake</span>
-                    <span>Dessert</span>
-                </li>
+            <ul> {
+                recipes.map(recipe => (
+                        <li key={recipe.id} onClick={() => onClick(recipe.id)}>
+                            <span>{recipe.name}</span>
+                            <span> - </span>
+                            <span>{recipe.category}</span>
+                        </li>
+                    )
+                )
+            }
             </ul>
         </div>
     );
