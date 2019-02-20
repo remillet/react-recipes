@@ -10,7 +10,7 @@ module.exports = {
 	},
 	context: path.join(__dirname, 'src'),
     mode: 'development',
-    entry: ['whatwg-fetch', './index.js'],
+    entry: './index.js',
     output: {
         path: path.join(__dirname, 'dist'),
         filename: './bundle.js'
@@ -20,6 +20,14 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.css$/,
+                loader: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader'
+                ]
             },
             {
                 test: /\.(png|jpeg|jpg)$/,
