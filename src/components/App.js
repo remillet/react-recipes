@@ -47,15 +47,15 @@ class App extends React.Component {
             <div>
                 <Header />
                 <Button />
-                <main style={{ display: 'flex' }}>
+                <main className="px4 flex">
                     <RecipeList 
                         recipes={recipes} 
-                        style={{ flex: '3' }}
+                        style={{ flex: 3 }}
                         onClick={this.onRecipeClick}
                     />
-                    <RecipeDetail
+                    <RecipeDetail className="ml4"
                         details={details}
-                        style={{ flex: '5' }} />
+                        style={{ flex: 5 }} />
                 </main>
             </div>
         );

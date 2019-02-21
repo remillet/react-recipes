@@ -1,21 +1,35 @@
 import React from 'react';
 import TUNA_IMAGE from '../static/images/tuna.jpg';
+import classNames from 'classnames';
 
 const RecipeDetail = (props) => {
 
-    const { details } = props
+    const { details, style, className } = props
 
     if (details == null) {
         console.log('No recipe seleted.')
         return (
-            <h3 style={props.style}>Select a recipe on the left to see the details.</h3>
+            <p
+                style={style}
+                className={
+                    classNames('h3 p2 bg-white italic center',
+                        className)
+                }
+            >
+                Select a recipe on the left to see the details.
+            </p>
         )
     }
 
     return(
-       <div style={props.style}>
-           <h2>{details.name}</h2>
-           <img src={details.image} height="500" width="500" />
+        <div style={style} 
+            className={
+                classNames('h3 p2 bg-white',
+                    className)
+            }
+        >
+           <h2 className="h2 center">{details.name}</h2>
+           <img className="fit" src={details.image} />
            <div>
                <span>Category: {details.category}</span>
                <br />
