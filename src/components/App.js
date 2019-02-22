@@ -4,61 +4,55 @@ import RecipeList from './RecipeList';
 import RecipeDetail from './RecipeDetail';
 import Button from './Button';
 
-console.log("The process.env.API_URL is: ", API_URL)
+// console.log("The process.env.API_URL is: ", API_URL)
 
 class App extends React.Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            recipes: [],
-            details: null
-        }
-    }
+    this.state = {
+      recipes: [],
+      details: {
+        id: '-1',
+      },
+    };
+  }
 
-    componentDidMount() {
-        fetch(`${API_URL}/v1/recipes`)
-        .then(res => res.json())
-        .then(json => {
-            this.setState({
-                recipes: json
-            })
-        })
-        .catch(error => console.log("The error is: ", error));
-    }
+  componentDidMount() {
+    fetch(`${API_URL}/v1/recipes`)
+      .then(res => res.json())
+      .then(json => this.setState({ recipes: json }))
+      .catch(error => console.error('The error is: ', error));
+  }
 
     onRecipeClick = (id) => {
-        console.log(`Recipe ${id} clicked on.`)
-        fetch(`${API_URL}/v1/recipes/${id}`)
+      fetch(`${API_URL}/v1/recipes/${id}`)
         .then(res => res.json())
-        .then(json => {
-            this.setState({
-                details: json
-            })
-        })
-        .catch(error => console.log("The error is: ", error));
-    }    
+        .then(json => this.setState({ details: json }))
+        .catch(error => console.error('The error is: ', error));
+    }
 
     render() {
-        console.log(this.props);
-        const { recipes, details } = this.state;
+      const { recipes, details } = this.state;
 
-        return (
-            <div>
-                <Header />
-                <Button />
-                <main className="px4 flex">
-                    <RecipeList 
-                        recipes={recipes} 
-                        style={{ flex: 3 }}
-                        onClick={this.onRecipeClick}
-                    />
-                    <RecipeDetail className="ml4"
-                        details={details}
-                        style={{ flex: 5 }} />
-                </main>
-            </div>
-        );
+      return (
+        <div>
+          <Header />
+          <Button />
+          <main className="px4 flex">
+            <RecipeList
+              recipes={recipes}
+              style={{ flex: 3 }}
+              onClick={this.onRecipeClick}
+            />
+            <RecipeDetail
+              className="ml4"
+              details={details}
+              style={{ flex: 5 }}
+            />
+          </main>
+        </div>
+      );
     }
 }
 
