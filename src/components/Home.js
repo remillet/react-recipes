@@ -1,6 +1,6 @@
-import React from "react";
-import RecipeList from "./RecipeList";
-import RecipeDetail from "./RecipeDetail";
+import React from 'react';
+import RecipeList from './RecipeList';
+import RecipeDetail from './RecipeDetail';
 
 // console.log("The process.env.API_URL is: ", API_URL)
 
@@ -12,8 +12,8 @@ class Home extends React.Component {
       recipes: [],
       favorites: [],
       details: {
-        id: "-1"
-      }
+        id: '-1',
+      },
     };
   }
 
@@ -21,26 +21,26 @@ class Home extends React.Component {
     fetch(`${API_URL}/v1/recipes`)
       .then(res => res.json())
       .then(json => this.setState({ recipes: json }))
-      .catch(error => console.error("The error is: ", error));
+      .catch(error => console.error('The error is: ', error));
   }
 
-  onRecipeClick = id => {
+  onRecipeClick = (id) => {
     fetch(`${API_URL}/v1/recipes/${id}`)
       .then(res => res.json())
       .then(json => this.setState({ details: json }))
-      .catch(error => console.error("The error is: ", error));
+      .catch(error => console.error('The error is: ', error));
   };
 
   //
   //  Toggle (mark/unmark) recipe list item as a favorite
   //
-  toggleFavorite = id => {
+  toggleFavorite = (id) => {
     this.setState(({ favorites, ...state }) => {
       const index = favorites.indexOf(id);
       if (index !== -1) {
         const newState = {
           ...state,
-          favorites: favorites.filter(f => f !== id)
+          favorites: favorites.filter(f => f !== id),
         };
         return newState;
       }

@@ -1,6 +1,6 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import PropTypes from "prop-types";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const HeaderLink = ({ children, to }) => (
   <NavLink
@@ -15,7 +15,7 @@ const HeaderLink = ({ children, to }) => (
 
 HeaderLink.propTypes = {
   to: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 const Header = () => (
