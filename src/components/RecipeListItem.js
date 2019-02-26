@@ -33,7 +33,7 @@ const RecipeListItem = (props) => {
 };
 
 RecipeListItem.propTypes = {
-  recipe: PropTypes.arrayOf(String).isRequired,
+  recipe: PropTypes.object.isRequired,
   favorites: PropTypes.arrayOf(String).isRequired,
   onClick: PropTypes.func.isRequired,
   onFavorited: PropTypes.func.isRequired,

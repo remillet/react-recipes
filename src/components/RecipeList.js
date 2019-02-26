@@ -11,7 +11,7 @@ const RecipeList = (props) => {
       <ul className="list-reset">
         {' '}
         {recipes.map(recipe => (
-          <RecipeListItem recipe={recipe} favorites={favorites} {...props} />
+          <RecipeListItem key={recipe.id} recipe={recipe} favorites={favorites} {...props} />
         ))}
       </ul>
     </div>
