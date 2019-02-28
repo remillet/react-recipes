@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import RecipeList from './RecipeList';
 import RecipeDetail from './RecipeDetail';
 
@@ -9,19 +10,10 @@ class Home extends React.Component {
     super(props);
 
     this.state = {
-      recipes: [],
-      favorites: [],
       details: {
         id: '-1',
       },
     };
-  }
-
-  componentDidMount() {
-    fetch(`${API_URL}/v1/recipes`)
-      .then(res => res.json())
-      .then(json => this.setState({ recipes: json }))
-      .catch(error => console.error('The error is: ', error));
   }
 
   onRecipeClick = (id) => {
@@ -31,42 +23,33 @@ class Home extends React.Component {
       .catch(error => console.error('The error is: ', error));
   };
 
-  //
-  //  Toggle (mark/unmark) recipe list item as a favorite
-  //
-  toggleFavorite = (id) => {
-    this.setState(({ favorites, ...state }) => {
-      const index = favorites.indexOf(id);
-      if (index !== -1) {
-        const newState = {
-          ...state,
-          favorites: favorites.filter(f => f !== id),
-        };
-        return newState;
-      }
-      const newState = { ...state, favorites: [...favorites, id] };
-      return newState;
-    });
-  };
-
   render() {
-    const { recipes, details, favorites } = this.state;
+    const { recipes, favorites, onFavorited } = this.props;
+    const { details } = this.state;
 
     return (
       <div>
         <main className="px4 flex">
-          <RecipeList
-            recipes={recipes}
-            favorites={favorites}
-            style={{ flex: 3 }}
-            onClick={this.onRecipeClick}
-            onFavorited={this.toggleFavorite}
-          />
+          <div style={{ flex: 3 }}>
+            <h2 className="h2">Recipes</h2>
+            <RecipeList
+              recipes={recipes}
+              favorites={favorites}
+              onClick={this.onRecipeClick}
+              onFavorited={onFavorited}
+            />
+          </div>
           <RecipeDetail className="ml4" details={details} style={{ flex: 5 }} />
         </main>
       </div>
     );
   }
 }
+
+Home.propTypes = {
+  recipes: PropTypes.arrayOf(String).isRequired,
+  favorites: PropTypes.arrayOf(String).isRequired,
+  onFavorited: PropTypes.func.isRequired,
+};
 
 export default Home;

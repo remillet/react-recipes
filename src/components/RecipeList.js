@@ -7,21 +7,29 @@ const RecipeList = (props) => {
 
   return (
     <div style={style}>
-      <h2 className="h2">Recipes</h2>
       <ul className="list-reset">
         {' '}
         {recipes.map(recipe => (
-          <RecipeListItem key={recipe.id} recipe={recipe} favorites={favorites} {...props} />
+          <RecipeListItem
+            key={recipe.id}
+            recipe={recipe}
+            favorites={favorites}
+            {...props}
+          />
         ))}
       </ul>
     </div>
   );
 };
 
+RecipeList.defaultProps = {
+  style: null,
+};
+
 RecipeList.propTypes = {
   recipes: PropTypes.arrayOf(String).isRequired,
   favorites: PropTypes.arrayOf(String).isRequired,
-  style: PropTypes.object.isRequired,
+  style: PropTypes.object,
 };
 
 export default RecipeList;

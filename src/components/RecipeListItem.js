@@ -10,7 +10,11 @@ const RecipeListItem = (props) => {
     <li
       className="py1 border-bottom border-bottom-dashed pointer"
       key={recipe.id}
-      onClick={() => onClick(recipe.id)}
+      onClick={() => {
+        if (onClick !== null) {
+          onClick(recipe.id);
+        }
+      }}
     >
       <span
         role="img"
@@ -32,10 +36,14 @@ const RecipeListItem = (props) => {
   );
 };
 
+RecipeListItem.defaultProps = {
+  onClick: null,
+};
+
 RecipeListItem.propTypes = {
   recipe: PropTypes.object.isRequired,
   favorites: PropTypes.arrayOf(String).isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   onFavorited: PropTypes.func.isRequired,
 };
 
