@@ -8,7 +8,6 @@ const RecipeDetail = (props) => {
   const { details, style, className } = props;
 
   if (details == null || details.id === '-1') {
-    // console.log('No recipe seleted.')
     return (
       <p
         style={style}
