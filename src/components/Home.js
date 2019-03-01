@@ -39,7 +39,12 @@ class Home extends React.Component {
               onFavorited={onFavorited}
             />
           </div>
-          <RecipeDetail className="ml4" details={details} style={{ flex: 5 }} />
+          <RecipeDetail
+            linkTo={`/recipe/${details.id}`}
+            className="ml4"
+            details={details}
+            style={{ flex: 5 }}
+          />
         </main>
       </div>
     );

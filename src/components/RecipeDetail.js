@@ -1,11 +1,13 @@
 import React from 'react';
-// import TUNA_IMAGE from '../static/images/tuna.jpg';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import md5 from 'md5';
 
 const RecipeDetail = (props) => {
-  const { details, style, className } = props;
+  const {
+    details, style, className, linkTo,
+  } = props;
 
   if (details == null || details.id === '-1') {
     return (
@@ -52,13 +54,23 @@ const RecipeDetail = (props) => {
           ))
         }
       </ol>
+      <Link to={linkTo}>
+        More info...
+      </Link>
     </div>
   );
 };
 
+RecipeDetail.defaultProps = {
+  linkTo: '/',
+  style: null,
+  className: null,
+};
+
 RecipeDetail.propTypes = {
-  style: PropTypes.object.isRequired,
-  className: PropTypes.string.isRequired,
+  linkTo: PropTypes.string,
+  style: PropTypes.object,
+  className: PropTypes.string,
   details: PropTypes.object.isRequired,
 };
 

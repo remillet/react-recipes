@@ -28,7 +28,9 @@ class Recipe extends React.Component {
 
   render() {
     return (
-      <RecipeDetail {...this.state} />
+      <div className="px4">
+        <RecipeDetail {...this.state} />
+      </div>
     );
   }
 }
