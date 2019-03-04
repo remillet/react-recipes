@@ -37,14 +37,19 @@ const RecipeListItem = (props) => {
 };
 
 RecipeListItem.defaultProps = {
+  recipe: {
+    id: -1,
+  },
+  favorites: [],
   onClick: null,
+  onFavorited: null,
 };
 
 RecipeListItem.propTypes = {
-  recipe: PropTypes.object.isRequired,
-  favorites: PropTypes.arrayOf(String).isRequired,
+  recipe: PropTypes.object,
+  favorites: PropTypes.arrayOf(String),
   onClick: PropTypes.func,
-  onFavorited: PropTypes.func.isRequired,
+  onFavorited: PropTypes.func,
 };
 
 export default RecipeListItem;
