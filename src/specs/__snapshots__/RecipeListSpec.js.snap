@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RecipeList /> Should not break if no recipe list is passed/provided. 1`] = `
+<div
+  style={null}
+>
+  <ul
+    className="list-reset"
+  >
+     
+  </ul>
+</div>
+`;
+
+exports[`<RecipeList /> Should render correctly 1`] = `
+<div
+  style={null}
+>
+  <ul
+    className="list-reset"
+  >
+     
+    <li
+      className="py1 border-bottom border-bottom-dashed pointer"
+      onClick={[Function]}
+    >
+      <span
+        aria-label="favorite"
+        className="mr1"
+        onClick={[Function]}
+        role="img"
+      >
+        ⌑
+      </span>
+      <span>
+        Recipe list item one
+      </span>
+      <span>
+         - 
+      </span>
+      <span>
+        Dessert
+      </span>
+    </li>
+    <li
+      className="py1 border-bottom border-bottom-dashed pointer"
+      onClick={[Function]}
+    >
+      <span
+        aria-label="favorite"
+        className="mr1"
+        onClick={[Function]}
+        role="img"
+      >
+        ⌑
+      </span>
+      <span>
+        Recipe list item two
+      </span>
+      <span>
+         - 
+      </span>
+      <span>
+        Pasta
+      </span>
+    </li>
+    <li
+      className="py1 border-bottom border-bottom-dashed pointer"
+      onClick={[Function]}
+    >
+      <span
+        aria-label="favorite"
+        className="mr1"
+        onClick={[Function]}
+        role="img"
+      >
+        ⌑
+      </span>
+      <span>
+        Recipe list item three
+      </span>
+      <span>
+         - 
+      </span>
+      <span>
+        Bread
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`<RecipeList /> The render favorited states correctly 1`] = `
+<div
+  style={null}
+>
+  <ul
+    className="list-reset"
+  >
+     
+    <li
+      className="py1 border-bottom border-bottom-dashed pointer"
+      onClick={[Function]}
+    >
+      <span
+        aria-label="favorite"
+        className="mr1"
+        onClick={[Function]}
+        role="img"
+      >
+        ⭐
+      </span>
+      <span>
+        Recipe list item one
+      </span>
+      <span>
+         - 
+      </span>
+      <span>
+        Dessert
+      </span>
+    </li>
+    <li
+      className="py1 border-bottom border-bottom-dashed pointer"
+      onClick={[Function]}
+    >
+      <span
+        aria-label="favorite"
+        className="mr1"
+        onClick={[Function]}
+        role="img"
+      >
+        ⌑
+      </span>
+      <span>
+        Recipe list item two
+      </span>
+      <span>
+         - 
+      </span>
+      <span>
+        Pasta
+      </span>
+    </li>
+    <li
+      className="py1 border-bottom border-bottom-dashed pointer"
+      onClick={[Function]}
+    >
+      <span
+        aria-label="favorite"
+        className="mr1"
+        onClick={[Function]}
+        role="img"
+      >
+        ⭐
+      </span>
+      <span>
+        Recipe list item three
+      </span>
+      <span>
+         - 
+      </span>
+      <span>
+        Bread
+      </span>
+    </li>
+  </ul>
+</div>
+`;

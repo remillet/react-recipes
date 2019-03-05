@@ -41,7 +41,7 @@ const RecipeDetail = (props) => {
       <h3>Ingredients</h3>
       <ul>
         {
-          details.ingredients.map(ingredient => (
+          details.ingredients && details.ingredients.map(ingredient => (
             <li key={md5(ingredient)}>{ingredient}</li>
           ))
         }
@@ -49,7 +49,7 @@ const RecipeDetail = (props) => {
       <h3>Cooking Instructions</h3>
       <ol>
         {
-          details.steps.map(step => (
+          details.steps && details.steps.map(step => (
             <li key={md5(step)}>{step}</li>
           ))
         }
@@ -62,6 +62,7 @@ const RecipeDetail = (props) => {
 };
 
 RecipeDetail.defaultProps = {
+  details: null,
   linkTo: '/',
   style: null,
   className: null,
@@ -71,7 +72,7 @@ RecipeDetail.propTypes = {
   linkTo: PropTypes.string,
   style: PropTypes.object,
   className: PropTypes.string,
-  details: PropTypes.object.isRequired,
+  details: PropTypes.object,
 };
 
 export default RecipeDetail;

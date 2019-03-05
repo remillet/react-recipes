@@ -24,11 +24,13 @@ const RecipeList = (props) => {
 
 RecipeList.defaultProps = {
   style: null,
+  recipes: [],
+  favorites: [],
 };
 
 RecipeList.propTypes = {
-  recipes: PropTypes.arrayOf(String).isRequired,
-  favorites: PropTypes.arrayOf(String).isRequired,
+  recipes: PropTypes.arrayOf(Object),
+  favorites: PropTypes.arrayOf(String),
   style: PropTypes.object,
 };
 

@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RecipeList /> Should not break if no recipe is passed/provided. 1`] = `
+<p
+  className="h3 p2 bg-white italic center"
+  style={null}
+>
+  Select a recipe on the left to see the details.
+</p>
+`;
+
+exports[`<RecipeList /> Should render correctly 1`] = `
+<div
+  className="h3 p2 bg-white"
+  style={null}
+>
+  <h2
+    className="h2 center"
+  >
+    Recipe list item one
+  </h2>
+  <img
+    alt="Food"
+    className="fit"
+    src="http:test.me.com/100.jpg"
+  />
+  <div>
+    <span>
+      Category: 
+      Dessert
+    </span>
+    <br />
+    <span>
+      Calories: 
+      180
+    </span>
+  </div>
+  <h3>
+    Ingredients
+  </h3>
+  <ul>
+    <li>
+      Flour
+    </li>
+    <li>
+      Milk
+    </li>
+    <li>
+      Butter
+    </li>
+  </ul>
+  <h3>
+    Cooking Instructions
+  </h3>
+  <ol>
+    <li>
+      Sift the flour
+    </li>
+    <li>
+      Scorch the milk
+    </li>
+    <li>
+      Whip the butter
+    </li>
+  </ol>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    More info...
+  </a>
+</div>
+`;
+
+exports[`<RecipeList /> Should render correctly with no ingredients 1`] = `
+<div
+  className="h3 p2 bg-white"
+  style={null}
+>
+  <h2
+    className="h2 center"
+  >
+    Recipe list item one
+  </h2>
+  <img
+    alt="Food"
+    className="fit"
+    src="http:test.me.com/100.jpg"
+  />
+  <div>
+    <span>
+      Category: 
+      Dessert
+    </span>
+    <br />
+    <span>
+      Calories: 
+      180
+    </span>
+  </div>
+  <h3>
+    Ingredients
+  </h3>
+  <ul />
+  <h3>
+    Cooking Instructions
+  </h3>
+  <ol>
+    <li>
+      Sift the flour
+    </li>
+    <li>
+      Scorch the milk
+    </li>
+    <li>
+      Whip the butter
+    </li>
+  </ol>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    More info...
+  </a>
+</div>
+`;
+
+exports[`<RecipeList /> Should render correctly with no steps 1`] = `
+<div
+  className="h3 p2 bg-white"
+  style={null}
+>
+  <h2
+    className="h2 center"
+  >
+    Recipe list item one
+  </h2>
+  <img
+    alt="Food"
+    className="fit"
+    src="http:test.me.com/100.jpg"
+  />
+  <div>
+    <span>
+      Category: 
+      Dessert
+    </span>
+    <br />
+    <span>
+      Calories: 
+      180
+    </span>
+  </div>
+  <h3>
+    Ingredients
+  </h3>
+  <ul>
+    <li>
+      Flour
+    </li>
+    <li>
+      Milk
+    </li>
+    <li>
+      Butter
+    </li>
+  </ul>
+  <h3>
+    Cooking Instructions
+  </h3>
+  <ol />
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    More info...
+  </a>
+</div>
+`;
